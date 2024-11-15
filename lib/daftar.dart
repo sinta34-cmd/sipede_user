@@ -73,9 +73,6 @@ class _DaftarState extends State<Daftar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Daftar'),
-      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
@@ -94,12 +91,10 @@ class _DaftarState extends State<Daftar> {
                     ),
                   ),
                 ),
-                TextFormField(
+                const SizedBox(height: 20),
+                CustomInputField(
                   controller: _namaController,
-                  decoration: const InputDecoration(
-                    labelText: 'Nama',
-                    filled: true,
-                  ),
+                  labelText: 'Nama',
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Harap masukkan nama Anda';
@@ -107,12 +102,9 @@ class _DaftarState extends State<Daftar> {
                     return null;
                   },
                 ),
-                TextFormField(
+                CustomInputField(
                   controller: _nikController,
-                  decoration: const InputDecoration(
-                    labelText: 'NIK',
-                    filled: true,
-                  ),
+                  labelText: 'NIK',
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Harap masukkan NIK Anda';
@@ -120,12 +112,9 @@ class _DaftarState extends State<Daftar> {
                     return null;
                   },
                 ),
-                TextFormField(
+                CustomInputField(
                   controller: _noKkController,
-                  decoration: const InputDecoration(
-                    labelText: 'No. KK',
-                    filled: true,
-                  ),
+                  labelText: 'No. KK',
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Harap masukkan No. KK Anda';
@@ -133,12 +122,9 @@ class _DaftarState extends State<Daftar> {
                     return null;
                   },
                 ),
-                TextFormField(
+                CustomInputField(
                   controller: _nomorTeleponController,
-                  decoration: const InputDecoration(
-                    labelText: 'Nomor Telepon',
-                    filled: true,
-                  ),
+                  labelText: 'No.telp',
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Harap masukkan nomor telepon Anda';
@@ -146,12 +132,9 @@ class _DaftarState extends State<Daftar> {
                     return null;
                   },
                 ),
-                TextFormField(
+                CustomInputField(
                   controller: _emailController,
-                  decoration: const InputDecoration(
-                    labelText: 'Email',
-                    filled: true,
-                  ),
+                  labelText: 'Email',
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Harap masukkan email Anda';
@@ -159,13 +142,10 @@ class _DaftarState extends State<Daftar> {
                     return null;
                   },
                 ),
-                TextFormField(
+                CustomInputField(
                   controller: _passwordController,
-                  decoration: const InputDecoration(
-                    labelText: 'Password',
-                    filled: true,
-                  ),
-                  obscureText: true,
+                  labelText: 'Password',
+                  isPassword: true,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Harap masukkan password Anda';
@@ -173,12 +153,9 @@ class _DaftarState extends State<Daftar> {
                     return null;
                   },
                 ),
-                TextFormField(
+                CustomInputField(
                   controller: _tanggalLahirController,
-                  decoration: const InputDecoration(
-                    labelText: 'Tanggal Lahir',
-                    filled: true,
-                  ),
+                  labelText: 'Tanggal Lahir',
                   readOnly: true,
                   onTap: () => _selectTanggalLahir(context), // Buka date picker
                   validator: (value) {
@@ -196,11 +173,67 @@ class _DaftarState extends State<Daftar> {
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.blue,
                           foregroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
                         ),
                         child: const Text('Kirim'),
                       ),
               ],
             ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// Custom Input Field Widget
+class CustomInputField extends StatelessWidget {
+  final TextEditingController controller;
+  final String labelText;
+  final bool isPassword;
+  final bool readOnly;
+  final Function()? onTap;
+  final String? Function(String?)? validator;
+
+  const CustomInputField({
+    required this.controller,
+    required this.labelText,
+    this.isPassword = false,
+    this.readOnly = false,
+    this.onTap,
+    this.validator,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: TextFormField(
+        controller: controller,
+        obscureText: isPassword,
+        readOnly: readOnly,
+        onTap: onTap,
+        validator: validator,
+        style: const TextStyle(
+          color: Colors.grey, // Set text color to gray
+        ),
+        decoration: InputDecoration(
+          labelText: labelText,
+          filled: true,
+          fillColor: Colors.white, // Set background color to white
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(color: Colors.grey[400]!),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(color: Colors.grey[400]!),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(color: Colors.blue),
           ),
         ),
       ),

@@ -3,6 +3,7 @@ import 'package:myapp/detail_desa.dart';
 import 'package:myapp/detail_info.dart';
 import 'package:myapp/logout.dart';
 import 'package:myapp/pengaturan_akun.dart';
+import 'package:myapp/welcome.dart';
 
 class Sidebar extends StatefulWidget {
   const Sidebar({super.key});
@@ -106,17 +107,17 @@ class _SidebarState extends State<Sidebar> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('Konfirmasi Keluar'),
-          content: const Text('Apakah Anda yakin ingin keluar?'),
-          actions: [
+          title: const Text('Peringatan!'),
+          content: const Text('Apakah anda yakin ingin keluar?'),
+          actions: <Widget>[
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop(); // Tutup dialog
-              },
-              child: const Text('Batal'),
-            ),
-            TextButton(
-              onPressed: () {
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Welcome()),
+                  (route) => false,
+                );
               },
               child: const Text('Keluar'),
             ),
