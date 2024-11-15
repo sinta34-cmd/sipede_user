@@ -1,38 +1,38 @@
 import 'package:flutter/material.dart';
 
-class DetailDokumen3 extends StatefulWidget {
-  const DetailDokumen3({super.key});
+class DetailDokumen4 extends StatefulWidget {
+  const DetailDokumen4({super.key});
 
   @override
-  _DetailDokumen3State createState() => _DetailDokumen3State();
+  _DetailDokumen4State createState() => _DetailDokumen4State();
 }
 
-class _DetailDokumen3State extends State<DetailDokumen3> {
+class _DetailDokumen4State extends State<DetailDokumen4> {
   final List<Map<String, String>> images = [
     {
-      "title": "17 Agustus",
-      "imagePath": "assets/image/agustus1.jpg",
-      "tanggal": "2023-08-17"
+      "title": "Jalan Desa ",
+      "imagePath": "assets/image/tani1.jpg",
+      "tanggal": "2023-12-20"
     },
     {
-      "title": "17 Agustus",
-      "imagePath": "assets/image/agustus2.jpg",
-      "tanggal": "2023-08-17"
+      "title": "Pemandangan",
+      "imagePath": "assets/image/tani3.jpg",
+      "tanggal": "2023-12-21"
     },
     {
-      "title": "17 Agustus",
-      "imagePath": "assets/image/agustus3.jpeg",
-      "tanggal": "2023-08-17"
+      "title": "Aktivitas",
+      "imagePath": "assets/image/tani4.jpeg",
+      "tanggal": "2023-12-22"
     },
     {
-      "title": "17 Agustus",
-      "imagePath": "assets/image/agustus4.jpg",
-      "tanggal": "2023-08-17"
+      "title": "Ronda Malam",
+      "imagePath": "assets/image/tani5.jpeg",
+      "tanggal": "2023-12-23"
     },
     {
-      "title": "17 Agustus",
-      "imagePath": "assets/image/agustus5.jpg",
-      "tanggal": "2023-08-17"
+      "title": "Sungai",
+      "imagePath": "assets/image/tani6.jpeg",
+      "tanggal": "2023-12-24"
     },
   ];
   final Set<int> selectedIndexes = {};
@@ -41,8 +41,8 @@ class _DetailDokumen3State extends State<DetailDokumen3> {
     setState(() {
       images.add({
         "title": "New Image",
-        "imagePath": "image/newimage.jpg",
-        "tanggal": "2023-08-18"
+        "imagePath": "assets/image/newimage.jpg",
+        "tanggal": "2023-12-25"
       });
     });
   }
@@ -85,14 +85,13 @@ class _DetailDokumen3State extends State<DetailDokumen3> {
                   icon: const Icon(Icons.arrow_back),
                 ),
                 const Text(
-                  "Hantu Kampung",
+                  "Gambar Lain",
                   style: TextStyle(fontSize: 18.0),
                 ),
               ],
             ),
             const SizedBox(height: 16.0),
-            const Text("Dusun: MIDLANEREJO"),
-            const Text("RT/RW: 003/008"),
+            const Text("Linimasa Desa"),
             const SizedBox(height: 16.0),
             Row(
               children: [

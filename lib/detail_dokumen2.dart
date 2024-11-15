@@ -9,17 +9,17 @@ class DetailDokumen2 extends StatefulWidget {
 
 class _DetailDokumen2State extends State<DetailDokumen2> {
   final List<Map<String, String>> images = [
-    {"title": "17 Agustus", "imagePath": "assets/image/hantu1.jpg", "tanggal": "2023-08-17"},
-    {"title": "17 Agustus", "imagePath": "assets/image/hantu2.jpg", "tanggal": "2023-08-17"},
-    {"title": "17 Agustus", "imagePath": "assets/image/hantu3.jpg", "tanggal": "2023-08-17"},
-    {"title": "17 Agustus", "imagePath": "assets/image/hantu4.jpg", "tanggal": "2023-08-17"},
-    {"title": "17 Agustus", "imagePath": "assets/image/hantu5.jpg", "tanggal": "2023-08-17"},
+    {"title": "Hantu Kampung", "imagePath": "assets/image/hantu1.jpg", "tanggal": "2023-08-17"},
+    {"title": "Hantu Kampung", "imagePath": "assets/image/hantu2.jpg", "tanggal": "2023-08-17"},
+    {"title": "Hantu Kampung", "imagePath": "assets/image/hantu3.jpeg", "tanggal": "2023-08-17"},
+    {"title": "Hantu Kampung", "imagePath": "assets/image/hantu4.jpg", "tanggal": "2023-08-17"},
+    {"title": "Hantu Kampung", "imagePath": "assets/image/hantu5.png", "tanggal": "2023-08-17"},
   ];
   final Set<int> selectedIndexes = {};
 
   void _addImage() {
     setState(() {
-      images.add({"title": "New Image", "imagePath": "image/newimage.jpg", "tanggal": "2023-08-18"});
+      images.add({"title": "New Image", "imagePath": "assets/image/newimage.jpg", "tanggal": "2023-08-18"});
     });
   }
 
@@ -61,7 +61,7 @@ class _DetailDokumen2State extends State<DetailDokumen2> {
                   icon: const Icon(Icons.arrow_back),
                 ),
                 const Text(
-                  "17 Agustus",
+                  "Hantu Kampung",
                   style: TextStyle(fontSize: 18.0),
                 ),
               ],

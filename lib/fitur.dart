@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class Fitur extends StatelessWidget {
   const Fitur({super.key});
 
@@ -6,39 +7,24 @@ class Fitur extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // Remove title and leading from AppBar
+        title: const Text('Fitur'),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
-      body:
- SingleChildScrollView(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            // Custom App Bar within the page
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Row(
-                children: [
-                  IconButton(
-                    icon: const Icon(Icons.arrow_back),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                  ),
-                  const SizedBox(width: 16), // Spacing between back button and title
-                  const Text(
-                    'Fitur',
-                    style: TextStyle(fontSize: 20, ),
-                  ),
-                ],
-              ),
-            ),
-            // Rest of your content remains the same
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset('image/sipede login.png', height: 70),
+                Image.asset('assets/image/sipede login.png', height: 70),
                 const SizedBox(width: 10),
-                Image.asset('image/sipedebawah.png', height: 50),
+                Image.asset('assets/image/sipedebawah.png', height: 50),
               ],
             ),
             const SizedBox(height: 16),
@@ -48,6 +34,7 @@ class Fitur extends StatelessWidget {
               title: 'Berita Desa',
               subtitle:
                   'Mengetahui jadwal kegiatan desa tanpa perlu melihat di papan pengumuman di kantor desa.',
+              cardColor: const Color.fromARGB(255, 59, 167, 235),
             ),
             const SizedBox(height: 16),
             buildFeatureCard(
@@ -56,6 +43,7 @@ class Fitur extends StatelessWidget {
               title: 'Layanan Mandiri',
               subtitle:
                   'Tidak perlu pergi ke kantor desa untuk mengurus surat, tinggal scan dan semua beres.',
+              cardColor: const Color.fromARGB(255, 59, 167, 235),
             ),
             const SizedBox(height: 16),
             buildFeatureCard(
@@ -63,7 +51,8 @@ class Fitur extends StatelessWidget {
               iconColor: Colors.red,
               title: 'Pengaduan Desa',
               subtitle:
-                  'Masyarakat bisa mengadu jika terjadi sesuatu dan akan segera di proses',
+                  'Masyarakat bisa mengadu jika terjadi sesuatu dan akan segera diproses.',
+              cardColor: const Color.fromARGB(255, 59, 167, 235),
             ),
             const SizedBox(height: 16),
             buildFeatureCard(
@@ -71,6 +60,7 @@ class Fitur extends StatelessWidget {
               iconColor: Colors.purple,
               title: 'Dokumentasi',
               subtitle: 'Menyimpan foto dan bukti jika ada kegiatan desa.',
+              cardColor: const Color.fromARGB(255, 59, 167, 235),
             ),
             const SizedBox(height: 16),
             buildFeatureCard(
@@ -78,7 +68,8 @@ class Fitur extends StatelessWidget {
               iconColor: Colors.blueGrey,
               title: 'Dana Desa',
               subtitle:
-                  'Masyarakat bisa melihat transparasi dana desa melihat dimana saja penyaluranya.',
+                  'Masyarakat bisa melihat transparansi dana desa dan penggunaannya.',
+              cardColor: const Color.fromARGB(255, 59, 167, 235),
             ),
             const SizedBox(height: 16),
             buildFeatureCard(
@@ -86,7 +77,8 @@ class Fitur extends StatelessWidget {
               iconColor: Colors.brown,
               title: 'Perangkat Desa',
               subtitle:
-                  'Masyarakat bisa mengetahui siapasaja yang menjabat dan profil lengkap perangkat desa.',
+                  'Masyarakat bisa mengetahui siapa saja yang menjabat dan profil lengkap perangkat desa.',
+              cardColor: const Color.fromARGB(255, 59, 167, 235),
             ),
           ],
         ),
@@ -99,21 +91,36 @@ class Fitur extends StatelessWidget {
     required Color iconColor,
     required String title,
     required String subtitle,
+    required Color cardColor,
   }) {
     return Card(
+      color: cardColor,
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(12.0),
             child: Icon(
               icon,
-              size: 48,
+              size: 40,
               color: iconColor,
             ),
           ),
           ListTile(
-            title: Text(title),
-            subtitle: Text(subtitle),
+            title: Text(
+              title,
+              style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+            subtitle: Text(
+              subtitle,
+              style: const TextStyle(
+                fontSize: 14,
+                color: Colors.white,
+              ),
+            ),
           ),
         ],
       ),

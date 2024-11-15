@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/detail_dokumen.dart';
 import 'package:myapp/detail_dokumen2.dart';
+import 'package:myapp/detail_dokumen4.dart';
 import 'detail_dokumen1.dart';
 import 'detail_dokumen3.dart';
 
@@ -48,17 +49,17 @@ class Dokumen extends StatelessWidget {
                 children: [
                   _buildImageItem("Kerja Bakti", "image/kerjabktikampung.jpg",
                       context, const DetailDokumen1()),
-                  _buildImageItem("Hantu Kampung", "assets/hantu_kampung.jpg",
+                  _buildImageItem("Hantu Kampung", "assets/image/hantu1.jpg",
                       context, const DetailDokumen2()),
-                  _buildImageItem("Pertanian", "assets/pertanian.jpg", context,
+                  _buildImageItem("Pertanian", "assets/image/tani1.jpg", context,
+                      const DetailDokumen4()),
+                  _buildImageItem("17 Agustus", "assets/image/agustus2.jpg", context,
                       const DetailDokumen3()),
-                  _buildImageItem("17 Agustus", "image/lomba.jpg", context,
-                      const DetailDokumen1()),
                   // Tambahkan gambar lainnya di sini
                   Stack(
                     alignment: Alignment.topRight,
                     children: [
-                      _buildImageItem("Gambar Lain", "assets/gambar_lain.jpg",
+                      _buildImageItem("Gambar Lain", "assets/image/desa1.jpg",
                           context, const DetailDokumen1()),
                       IconButton(
                         onPressed: () {

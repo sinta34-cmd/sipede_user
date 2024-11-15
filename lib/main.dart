@@ -4,6 +4,7 @@ import 'package:myapp/dokumen.dart';
 import 'package:myapp/layanan_mandiri.dart';
 import 'package:myapp/pengajuan_surat.dart';
 import 'package:myapp/rincian_surat.dart';
+import 'package:myapp/splash_screen.dart';
 import 'package:myapp/welcome.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
         useMaterial3: true,
       ),
-      home: const Welcome(),
+      home: const SplashScreen(),
     );
   }
 }

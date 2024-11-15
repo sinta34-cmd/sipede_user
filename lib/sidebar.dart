@@ -117,12 +117,6 @@ class _SidebarState extends State<Sidebar> {
             ),
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop(); // Tutup dialog
-                Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Logout()),
-                  (route) => false,
-                );
               },
               child: const Text('Keluar'),
             ),
